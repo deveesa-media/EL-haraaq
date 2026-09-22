@@ -8,56 +8,92 @@
    ELEMENTS
 ===================================================== */
 
-const themeButton = document.getElementById("theme-toggle");
-const languageButton = document.getElementById("language-toggle");
-const menuButton = document.getElementById("menu-toggle");
-const mainNav = document.getElementById("main-nav");
-const topButton = document.getElementById("top-button");
-const yearSpan = document.getElementById("current-year");
-const header = document.getElementById("header");
+const themeButton =
+    document.getElementById("theme-toggle");
+
+const languageButton =
+    document.getElementById("language-toggle");
+
+const menuButton =
+    document.getElementById("menu-toggle");
+
+const mainNav =
+    document.getElementById("main-nav");
+
+const topButton =
+    document.getElementById("top-button");
+
+const yearSpan =
+    document.getElementById("current-year");
+
+const header =
+    document.getElementById("header");
 
 
 /* =====================================================
    THEME
 ===================================================== */
 
-let savedTheme = localStorage.getItem("theme") || "light";
+let savedTheme =
+    localStorage.getItem("theme") || "light";
+
 
 function applyTheme() {
 
-    const isDark = savedTheme === "dark";
+    const isDark =
+        savedTheme === "dark";
 
-    document.body.classList.toggle("dark", isDark);
+    document.body.classList.toggle(
+        "dark",
+        isDark
+    );
 
-    if (!themeButton) return;
+
+    if (!themeButton) {
+        return;
+    }
+
 
     themeButton.innerHTML = isDark
         ? '<i class="fa-solid fa-sun"></i>'
         : '<i class="fa-solid fa-moon"></i>';
 
+
     themeButton.setAttribute(
         "aria-label",
-        isDark ? "Switch to light mode" : "Switch to dark mode"
+        isDark
+            ? "Switch to light mode"
+            : "Switch to dark mode"
     );
+
 }
+
 
 applyTheme();
 
 
 if (themeButton) {
 
-    themeButton.addEventListener("click", () => {
+    themeButton.addEventListener(
+        "click",
+        () => {
 
-        savedTheme =
-            document.body.classList.contains("dark")
-                ? "light"
-                : "dark";
+            savedTheme =
+                document.body.classList.contains("dark")
+                    ? "light"
+                    : "dark";
 
-        localStorage.setItem("theme", savedTheme);
 
-        applyTheme();
+            localStorage.setItem(
+                "theme",
+                savedTheme
+            );
 
-    });
+
+            applyTheme();
+
+        }
+    );
 
 }
 
@@ -72,31 +108,42 @@ let currentLanguage =
 
 function updateLanguage() {
 
-    const isArabic = currentLanguage === "ar";
+    const isArabic =
+        currentLanguage === "ar";
+
 
     document.documentElement.lang =
-        isArabic ? "ar" : "en";
+        isArabic
+            ? "ar"
+            : "en";
+
 
     document.documentElement.dir =
-        isArabic ? "rtl" : "ltr";
+        isArabic
+            ? "rtl"
+            : "ltr";
 
 
-    document.querySelectorAll(
-        "[data-ar][data-en]"
-    ).forEach(element => {
+    document
+        .querySelectorAll(
+            "[data-ar][data-en]"
+        )
+        .forEach(element => {
 
-        element.textContent =
-            isArabic
-                ? element.dataset.ar
-                : element.dataset.en;
+            element.textContent =
+                isArabic
+                    ? element.dataset.ar
+                    : element.dataset.en;
 
-    });
+        });
 
 
     if (languageButton) {
 
         languageButton.textContent =
-            isArabic ? "EN" : "AR";
+            isArabic
+                ? "EN"
+                : "AR";
 
     }
 
@@ -108,21 +155,26 @@ updateLanguage();
 
 if (languageButton) {
 
-    languageButton.addEventListener("click", () => {
+    languageButton.addEventListener(
+        "click",
+        () => {
 
-        currentLanguage =
-            currentLanguage === "ar"
-                ? "en"
-                : "ar";
+            currentLanguage =
+                currentLanguage === "ar"
+                    ? "en"
+                    : "ar";
 
-        localStorage.setItem(
-            "language",
-            currentLanguage
-        );
 
-        updateLanguage();
+            localStorage.setItem(
+                "language",
+                currentLanguage
+            );
 
-    });
+
+            updateLanguage();
+
+        }
+    );
 
 }
 
@@ -133,14 +185,19 @@ if (languageButton) {
 
 function closeMenu() {
 
-    if (!mainNav || !menuButton) return;
+    if (!mainNav || !menuButton) {
+        return;
+    }
+
 
     mainNav.classList.remove("open");
+
 
     menuButton.setAttribute(
         "aria-expanded",
         "false"
     );
+
 
     menuButton.innerHTML =
         '<i class="fa-solid fa-bars"></i>';
@@ -156,30 +213,36 @@ if (menuButton && mainNav) {
 
             event.stopPropagation();
 
+
             const isOpen =
                 mainNav.classList.toggle("open");
+
 
             menuButton.setAttribute(
                 "aria-expanded",
                 String(isOpen)
             );
 
-            menuButton.innerHTML = isOpen
-                ? '<i class="fa-solid fa-xmark"></i>'
-                : '<i class="fa-solid fa-bars"></i>';
+
+            menuButton.innerHTML =
+                isOpen
+                    ? '<i class="fa-solid fa-xmark"></i>'
+                    : '<i class="fa-solid fa-bars"></i>';
 
         }
     );
 
 
-    mainNav.querySelectorAll("a").forEach(link => {
+    mainNav
+        .querySelectorAll("a")
+        .forEach(link => {
 
-        link.addEventListener(
-            "click",
-            closeMenu
-        );
+            link.addEventListener(
+                "click",
+                closeMenu
+            );
 
-    });
+        });
 
 
     document.addEventListener(
@@ -243,7 +306,9 @@ const revealElements =
     document.querySelectorAll(".reveal");
 
 
-if ("IntersectionObserver" in window) {
+if (
+    "IntersectionObserver" in window
+) {
 
     const revealObserver =
         new IntersectionObserver(
@@ -251,9 +316,17 @@ if ("IntersectionObserver" in window) {
 
                 entries.forEach(entry => {
 
-                    if (!entry.isIntersecting) return;
+                    if (
+                        !entry.isIntersecting
+                    ) {
+                        return;
+                    }
 
-                    entry.target.classList.add("show");
+
+                    entry.target.classList.add(
+                        "show"
+                    );
+
 
                     observer.unobserve(
                         entry.target
@@ -272,9 +345,15 @@ if ("IntersectionObserver" in window) {
         (element, index) => {
 
             element.style.transitionDelay =
-                `${Math.min(index * 45, 260)}ms`;
+                `${Math.min(
+                    index * 45,
+                    260
+                )}ms`;
 
-            revealObserver.observe(element);
+
+            revealObserver.observe(
+                element
+            );
 
         }
     );
@@ -284,7 +363,9 @@ if ("IntersectionObserver" in window) {
     revealElements.forEach(
         element => {
 
-            element.classList.add("show");
+            element.classList.add(
+                "show"
+            );
 
         }
     );
@@ -297,7 +378,9 @@ if ("IntersectionObserver" in window) {
 ===================================================== */
 
 document
-    .querySelectorAll('a[href^="#"]')
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
     .forEach(link => {
 
         link.addEventListener(
@@ -306,6 +389,7 @@ document
 
                 const targetId =
                     link.getAttribute("href");
+
 
                 if (
                     !targetId ||
@@ -321,7 +405,9 @@ document
                     );
 
 
-                if (!target) return;
+                if (!target) {
+                    return;
+                }
 
 
                 event.preventDefault();
@@ -347,39 +433,51 @@ const sections =
         "main section[id]"
     );
 
+
 const navLinks =
     document.querySelectorAll(
         ".nav a"
     );
 
 
-if ("IntersectionObserver" in window) {
+if (
+    "IntersectionObserver" in window
+) {
 
     const sectionObserver =
         new IntersectionObserver(
             entries => {
 
-                entries.forEach(entry => {
+                entries.forEach(
+                    entry => {
 
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+                        if (
+                            !entry.isIntersecting
+                        ) {
+                            return;
+                        }
 
 
-                    navLinks.forEach(link => {
+                        navLinks.forEach(
+                            link => {
 
-                        const isActive =
-                            link.getAttribute("href") ===
-                            `#${entry.target.id}`;
+                                const isActive =
+                                    link.getAttribute(
+                                        "href"
+                                    ) ===
+                                    `#${entry.target.id}`;
 
-                        link.classList.toggle(
-                            "active",
-                            isActive
+
+                                link.classList.toggle(
+                                    "active",
+                                    isActive
+                                );
+
+                            }
                         );
 
-                    });
-
-                });
+                    }
+                );
 
             },
             {
@@ -389,11 +487,15 @@ if ("IntersectionObserver" in window) {
         );
 
 
-    sections.forEach(section => {
+    sections.forEach(
+        section => {
 
-        sectionObserver.observe(section);
+            sectionObserver.observe(
+                section
+            );
 
-    });
+        }
+    );
 
 }
 
@@ -406,19 +508,27 @@ window.addEventListener(
     "scroll",
     () => {
 
-        if (!header) return;
+        if (!header) {
+            return;
+        }
 
 
         if (window.scrollY > 30) {
 
-            header.classList.add("scrolled");
+            header.classList.add(
+                "scrolled"
+            );
+
 
             header.style.boxShadow =
                 "0 10px 35px rgba(0,0,0,.08)";
 
         } else {
 
-            header.classList.remove("scrolled");
+            header.classList.remove(
+                "scrolled"
+            );
+
 
             header.style.boxShadow =
                 "none";
@@ -446,10 +556,14 @@ window.addEventListener(
 
 
         document
-            .querySelectorAll(".hero .reveal")
+            .querySelectorAll(
+                ".hero .reveal"
+            )
             .forEach(element => {
 
-                element.classList.add("show");
+                element.classList.add(
+                    "show"
+                );
 
             });
 
