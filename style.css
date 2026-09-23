@@ -2,10 +2,17 @@
 
 
 /* =====================================================
+   ALHARAA WEBSITE
+   MAIN CSS
+===================================================== */
+
+
+/* =====================================================
    VARIABLES
 ===================================================== */
 
 :root {
+
     --orange: #ff6b18;
     --orange-light: #ff8a3d;
 
@@ -78,6 +85,7 @@ button {
 ===================================================== */
 
 body.dark {
+
     --bg: #080808;
     --surface: #141414;
     --surface-2: #101010;
@@ -98,10 +106,13 @@ body.dark {
 ===================================================== */
 
 .header {
+
     position: fixed;
+
     top: 0;
     right: 0;
     left: 0;
+
     z-index: 1000;
 
     padding: 12px 4%;
@@ -124,6 +135,7 @@ body.dark .header {
 }
 
 .header-container {
+
     width: 100%;
     max-width: 1250px;
 
@@ -136,6 +148,7 @@ body.dark .header {
 }
 
 .brand {
+
     width: 58px;
     height: 58px;
 
@@ -146,6 +159,7 @@ body.dark .header {
 }
 
 .brand img {
+
     width: 100%;
     height: 100%;
 
@@ -153,15 +167,18 @@ body.dark .header {
 }
 
 .nav {
+
     flex: 1;
 
     display: flex;
+
     justify-content: center;
 
     gap: 6px;
 }
 
 .nav a {
+
     padding: 10px 15px;
 
     border-radius: 12px;
@@ -175,6 +192,7 @@ body.dark .header {
 
 .nav a:hover,
 .nav a.active {
+
     color: var(--orange);
 
     background:
@@ -182,7 +200,9 @@ body.dark .header {
 }
 
 .controls {
+
     display: flex;
+
     gap: 8px;
 
     flex-shrink: 0;
@@ -191,6 +211,7 @@ body.dark .header {
 .control-btn,
 .language-btn,
 .menu-btn {
+
     width: 42px;
     height: 42px;
 
@@ -200,6 +221,7 @@ body.dark .header {
     border-radius: 12px;
 
     background: transparent;
+
     color: var(--text);
 
     cursor: pointer;
@@ -214,6 +236,7 @@ body.dark .header {
 .control-btn:hover,
 .language-btn:hover,
 .menu-btn:hover {
+
     color: var(--orange);
 
     border-color:
@@ -233,6 +256,7 @@ body.dark .header {
 ===================================================== */
 
 .hero {
+
     min-height: 100svh;
     min-height: 100vh;
 
@@ -260,6 +284,7 @@ body.dark .header {
 }
 
 body.dark .hero {
+
     background:
         radial-gradient(
             circle at 78% 48%,
@@ -275,6 +300,7 @@ body.dark .hero {
 }
 
 .hero-content {
+
     width: min(1200px, 100%);
 
     display: grid;
@@ -291,12 +317,14 @@ body.dark .hero {
 }
 
 .hero-text {
+
     text-align: right;
 
     min-width: 0;
 }
 
 .orange-line {
+
     width: 95px;
     height: 6px;
 
@@ -313,6 +341,7 @@ body.dark .hero {
 }
 
 .eyebrow {
+
     color:
         var(--orange);
 
@@ -328,9 +357,11 @@ body.dark .hero {
 ===================================================== */
 
 .brand-title {
+
     margin-top: 8px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: flex-start;
@@ -346,6 +377,7 @@ body.dark .hero {
 }
 
 .brand-title span {
+
     display: block;
 
     white-space: nowrap;
@@ -357,6 +389,7 @@ body.dark .hero {
 ===================================================== */
 
 .hero h2 {
+
     font-size:
         clamp(22px, 3vw, 36px);
 
@@ -364,6 +397,7 @@ body.dark .hero {
 }
 
 .hero p {
+
     margin-top: 12px;
 
     color:
@@ -373,6 +407,7 @@ body.dark .hero {
 }
 
 .hero-buttons {
+
     display: flex;
 
     gap: 14px;
@@ -381,6 +416,7 @@ body.dark .hero {
 }
 
 .btn {
+
     min-height: 56px;
 
     padding:
@@ -391,6 +427,7 @@ body.dark .hero {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -406,11 +443,13 @@ body.dark .hero {
 }
 
 .btn:hover {
+
     transform:
         translateY(-5px);
 }
 
 .whatsapp-btn {
+
     color: white;
 
     background:
@@ -422,6 +461,7 @@ body.dark .hero {
 }
 
 .call-btn {
+
     color: white;
 
     background:
@@ -429,6 +469,7 @@ body.dark .hero {
 }
 
 body.dark .call-btn {
+
     color: #111;
 
     background:
@@ -441,9 +482,11 @@ body.dark .call-btn {
 ===================================================== */
 
 .hero-logo {
+
     min-height: 520px;
 
     display: grid;
+
     place-items: center;
 
     position: relative;
@@ -452,10 +495,12 @@ body.dark .call-btn {
 }
 
 .hero-logo img {
+
     width:
         min(520px, 90%);
 
     position: relative;
+
     z-index: 2;
 
     object-fit: contain;
@@ -471,6 +516,7 @@ body.dark .call-btn {
 }
 
 body.dark .hero-logo img {
+
     filter:
         drop-shadow(
             0 25px 50px
@@ -479,6 +525,7 @@ body.dark .hero-logo img {
 }
 
 .logo-orbit {
+
     position: absolute;
 
     border:
@@ -494,11 +541,13 @@ body.dark .hero-logo img {
 }
 
 .orbit-one {
+
     width: 500px;
     height: 500px;
 }
 
 .orbit-two {
+
     width: 620px;
     height: 620px;
 
@@ -511,6 +560,7 @@ body.dark .hero-logo img {
 }
 
 .hero-glow {
+
     position: absolute;
 
     border-radius: 50%;
@@ -525,6 +575,7 @@ body.dark .hero-logo img {
 }
 
 .glow-one {
+
     width: 300px;
     height: 300px;
 
@@ -536,6 +587,7 @@ body.dark .hero-logo img {
 }
 
 .glow-two {
+
     width: 250px;
     height: 250px;
 
@@ -552,6 +604,7 @@ body.dark .hero-logo img {
 ===================================================== */
 
 .scroll-hint {
+
     position: absolute;
 
     bottom: 28px;
@@ -590,6 +643,7 @@ body.dark .hero-logo img {
 ===================================================== */
 
 .section {
+
     width: 100%;
     max-width: 1250px;
 
@@ -600,6 +654,7 @@ body.dark .hero-logo img {
 }
 
 .section-alt {
+
     max-width: none;
 
     background:
@@ -607,9 +662,11 @@ body.dark .hero-logo img {
 }
 
 .section-title {
+
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 18px;
@@ -618,6 +675,7 @@ body.dark .hero-logo img {
 }
 
 .section-title span {
+
     width: 55px;
     height: 3px;
 
@@ -630,6 +688,7 @@ body.dark .hero-logo img {
 }
 
 .section-title h2 {
+
     font-size:
         clamp(25px, 4vw, 38px);
 
@@ -644,6 +703,7 @@ body.dark .hero-logo img {
 ===================================================== */
 
 .social-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -653,6 +713,7 @@ body.dark .hero-logo img {
 }
 
 .social-card {
+
     min-height: 150px;
 
     padding: 24px;
@@ -662,6 +723,7 @@ body.dark .hero-logo img {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 12px;
@@ -685,6 +747,7 @@ body.dark .hero-logo img {
 }
 
 .social-card:hover {
+
     transform:
         translateY(-8px);
 
@@ -693,10 +756,12 @@ body.dark .hero-logo img {
 }
 
 .social-icon {
+
     width: 52px;
     height: 52px;
 
     display: grid;
+
     place-items: center;
 
     flex-shrink: 0;
@@ -710,6 +775,7 @@ body.dark .hero-logo img {
 }
 
 .social-card strong {
+
     display: block;
 
     text-align: center;
@@ -718,6 +784,7 @@ body.dark .hero-logo img {
 }
 
 .social-card small {
+
     color:
         var(--orange);
 
@@ -758,6 +825,7 @@ body.dark .tiktok .social-icon {
 ===================================================== */
 
 .cards-grid {
+
     width: 100%;
     max-width: 1000px;
 
@@ -772,6 +840,7 @@ body.dark .tiktok .social-icon {
 }
 
 .info-card {
+
     padding: 30px;
 
     border-radius:
@@ -788,6 +857,7 @@ body.dark .tiktok .social-icon {
 }
 
 .card-heading {
+
     display: flex;
 
     align-items: center;
@@ -803,10 +873,12 @@ body.dark .tiktok .social-icon {
 
 .card-icon,
 .support-icon {
+
     width: 52px;
     height: 52px;
 
     display: grid;
+
     place-items: center;
 
     flex-shrink: 0;
@@ -821,17 +893,20 @@ body.dark .tiktok .social-icon {
 }
 
 .phone-list {
+
     display: grid;
 
     gap: 10px;
 }
 
 .phone-list a {
+
     padding: 15px;
 
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
     gap: 10px;
@@ -846,6 +921,7 @@ body.dark .tiktok .social-icon {
 }
 
 .phone-list a:hover {
+
     transform:
         translateX(-5px);
 
@@ -854,16 +930,19 @@ body.dark .tiktok .social-icon {
 }
 
 .phone-list b {
+
     direction: ltr;
 
     white-space: nowrap;
 }
 
 .phone-list span {
+
     color:
         #16bd5a;
 
     font-size: 13px;
+
     font-weight: 800;
 
     white-space: nowrap;
@@ -875,6 +954,7 @@ body.dark .tiktok .social-icon {
 ===================================================== */
 
 .support-grid {
+
     width: 100%;
     max-width: 1000px;
 
@@ -889,6 +969,7 @@ body.dark .tiktok .social-icon {
 }
 
 .support-card {
+
     padding: 22px;
 
     display: flex;
@@ -914,11 +995,13 @@ body.dark .tiktok .social-icon {
 }
 
 .support-card:hover {
+
     transform:
         translateY(-6px);
 }
 
 .support-card p {
+
     color:
         var(--muted);
 
@@ -928,6 +1011,7 @@ body.dark .tiktok .social-icon {
 }
 
 .support-card > b {
+
     margin-inline-start: auto;
 
     color:
@@ -940,6 +1024,7 @@ body.dark .tiktok .social-icon {
 ===================================================== */
 
 .location-section {
+
     padding:
         100px 5%;
 
@@ -948,6 +1033,7 @@ body.dark .tiktok .social-icon {
 }
 
 .location-card {
+
     width: 100%;
     max-width: 1000px;
 
@@ -977,10 +1063,12 @@ body.dark .tiktok .social-icon {
 }
 
 .location-icon {
+
     width: 80px;
     height: 80px;
 
     display: grid;
+
     place-items: center;
 
     flex-shrink: 0;
@@ -1001,6 +1089,7 @@ body.dark .tiktok .social-icon {
 }
 
 .location-text h3 {
+
     font-size: 30px;
 
     margin:
@@ -1008,6 +1097,7 @@ body.dark .tiktok .social-icon {
 }
 
 .location-text p {
+
     color:
         var(--muted);
 
@@ -1015,6 +1105,7 @@ body.dark .tiktok .social-icon {
 }
 
 .maps-btn {
+
     min-height: 50px;
 
     padding:
@@ -1040,6 +1131,7 @@ body.dark .tiktok .social-icon {
 }
 
 body.dark .maps-btn {
+
     color: #111;
 
     background:
@@ -1047,11 +1139,13 @@ body.dark .maps-btn {
 }
 
 .maps-btn:hover {
+
     transform:
         translateY(-4px);
 }
 
 .map-badge {
+
     width: 90px;
     height: 90px;
 
@@ -1068,6 +1162,7 @@ body.dark .maps-btn {
 }
 
 .map-badge i {
+
     color:
         var(--orange);
 
@@ -1080,6 +1175,7 @@ body.dark .maps-btn {
 ===================================================== */
 
 .support-banner {
+
     width: calc(100% - 10%);
     max-width: 1100px;
 
@@ -1122,6 +1218,7 @@ body.dark .maps-btn {
 }
 
 .support-actions {
+
     display: flex;
 
     gap: 10px;
@@ -1130,6 +1227,7 @@ body.dark .maps-btn {
 }
 
 .support-btn {
+
     min-height: 50px;
 
     padding:
@@ -1162,6 +1260,7 @@ body.dark .maps-btn {
 }
 
 .orange {
+
     background:
         var(--orange);
 
@@ -1175,6 +1274,7 @@ body.dark .maps-btn {
 ===================================================== */
 
 .footer {
+
     padding:
         45px 5%;
 
@@ -1189,6 +1289,7 @@ body.dark .maps-btn {
 }
 
 .footer-social {
+
     display: flex;
 
     justify-content: center;
@@ -1201,10 +1302,12 @@ body.dark .maps-btn {
 }
 
 .footer-social a {
+
     width: 42px;
     height: 42px;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 13px;
@@ -1220,6 +1323,7 @@ body.dark .maps-btn {
 }
 
 .footer-social a:hover {
+
     color:
         #111;
 
@@ -1231,6 +1335,7 @@ body.dark .maps-btn {
 }
 
 #top-button {
+
     position: absolute;
 
     left: 5%;
@@ -1266,6 +1371,7 @@ body.dark .maps-btn {
 ===================================================== */
 
 .reveal {
+
     opacity: 0;
 
     transform:
@@ -1277,6 +1383,7 @@ body.dark .maps-btn {
 }
 
 .reveal.show {
+
     opacity: 1;
 
     transform:
@@ -1284,6 +1391,7 @@ body.dark .maps-btn {
 }
 
 @keyframes floatLogo {
+
     0%,
     100% {
         transform: translateY(0);
@@ -1295,6 +1403,7 @@ body.dark .maps-btn {
 }
 
 @keyframes orbit {
+
     from {
         transform: rotate(0);
     }
@@ -1305,23 +1414,21 @@ body.dark .maps-btn {
 }
 
 @keyframes glow {
+
     0%,
     100% {
         opacity: .4;
-
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     50% {
         opacity: .8;
-
-        transform:
-            scale(1.15);
+        transform: scale(1.15);
     }
 }
 
 @keyframes scrollHint {
+
     0%,
     100% {
         transform:
@@ -1347,6 +1454,7 @@ body.dark .maps-btn {
     }
 
     .nav {
+
         position: absolute;
 
         top:
@@ -1384,6 +1492,7 @@ body.dark .maps-btn {
     }
 
     .nav.open {
+
         opacity: 1;
 
         visibility: visible;
@@ -1393,6 +1502,7 @@ body.dark .maps-btn {
     }
 
     .nav a {
+
         width: 100%;
 
         text-align: center;
@@ -1402,12 +1512,12 @@ body.dark .maps-btn {
         display: grid;
     }
 
-
     .hero {
         padding-top: 115px;
     }
 
     .hero-content {
+
         grid-template-columns:
             1fr;
 
@@ -1415,39 +1525,44 @@ body.dark .maps-btn {
     }
 
     .hero-text {
+
         order: 2;
 
         text-align: center;
     }
 
     .hero-logo {
+
         order: 1;
 
         min-height: 380px;
     }
 
     .orange-line {
+
         margin-inline:
             auto;
     }
 
     .brand-title {
+
         align-items: center;
     }
 
     .hero-buttons {
+
         justify-content:
             center;
     }
 
-
     .social-grid {
+
         grid-template-columns:
             repeat(2, 1fr);
     }
 
-
     .support-banner {
+
         margin-inline: 5%;
 
         flex-direction:
@@ -1459,8 +1574,8 @@ body.dark .maps-btn {
         text-align: center;
     }
 
-
     .location-card {
+
         grid-template-columns:
             auto 1fr;
     }
@@ -1488,6 +1603,7 @@ body.dark .maps-btn {
     }
 
     .brand {
+
         width: 50px;
         height: 50px;
     }
@@ -1499,12 +1615,13 @@ body.dark .maps-btn {
     .control-btn,
     .language-btn,
     .menu-btn {
+
         width: 40px;
         height: 40px;
     }
 
-
     .hero {
+
         padding:
             105px 5% 75px;
 
@@ -1516,6 +1633,7 @@ body.dark .maps-btn {
     }
 
     .hero-logo {
+
         min-height:
             285px;
 
@@ -1523,22 +1641,25 @@ body.dark .maps-btn {
     }
 
     .hero-logo img {
+
         width:
             min(88vw, 360px);
     }
 
     .orbit-one {
+
         width: 300px;
         height: 300px;
     }
 
     .orbit-two {
+
         width: 360px;
         height: 360px;
     }
 
-
     .brand-title {
+
         font-size:
             clamp(48px, 15vw, 72px);
 
@@ -1548,6 +1669,7 @@ body.dark .maps-btn {
     }
 
     .hero h2 {
+
         font-size:
             clamp(20px, 6vw, 28px);
 
@@ -1557,13 +1679,14 @@ body.dark .maps-btn {
     }
 
     .hero p {
+
         font-size: 14px;
 
         line-height: 1.8;
     }
 
-
     .hero-buttons {
+
         width: 100%;
 
         flex-direction:
@@ -1573,18 +1696,21 @@ body.dark .maps-btn {
     }
 
     .btn {
+
         width: 100%;
+
         min-height: 54px;
     }
 
-
     .section,
     .location-section {
+
         padding:
             75px 5%;
     }
 
     .section-title {
+
         gap: 10px;
 
         margin-bottom: 32px;
@@ -1595,24 +1721,25 @@ body.dark .maps-btn {
     }
 
     .section-title h2 {
+
         font-size:
             clamp(22px, 7vw, 30px);
     }
 
-
     .social-grid,
     .cards-grid,
     .support-grid {
+
         grid-template-columns:
             1fr;
     }
 
-
     .social-card {
+
         min-height: 155px;
+
         padding: 22px;
     }
-
 
     .info-card {
         padding: 22px;
@@ -1623,18 +1750,18 @@ body.dark .maps-btn {
     }
 
     .phone-list a {
+
         padding: 13px;
 
         flex-wrap: wrap;
     }
 
-
     .support-card {
         padding: 18px;
     }
 
-
     .location-card {
+
         grid-template-columns:
             1fr;
 
@@ -1654,14 +1781,15 @@ body.dark .maps-btn {
     }
 
     .maps-btn {
+
         width: 100%;
 
         justify-content:
             center;
     }
 
-
     .support-banner {
+
         width: 90%;
 
         margin:
@@ -1672,11 +1800,13 @@ body.dark .maps-btn {
     }
 
     .support-banner h2 {
+
         font-size:
             40px;
     }
 
     .support-actions {
+
         width: 100%;
 
         flex-direction:
@@ -1687,8 +1817,8 @@ body.dark .maps-btn {
         width: 100%;
     }
 
-
     #top-button {
+
         left: 18px;
         bottom: 20px;
     }
@@ -1703,6 +1833,7 @@ body.dark .maps-btn {
 @media (max-width: 380px) {
 
     .brand {
+
         width: 46px;
         height: 46px;
     }
@@ -1710,6 +1841,7 @@ body.dark .maps-btn {
     .control-btn,
     .language-btn,
     .menu-btn {
+
         width: 37px;
         height: 37px;
     }
@@ -1727,16 +1859,19 @@ body.dark .maps-btn {
     }
 
     .orbit-one {
+
         width: 260px;
         height: 260px;
     }
 
     .orbit-two {
+
         width: 310px;
         height: 310px;
     }
 
     .brand-title {
+
         font-size:
             14vw;
 
@@ -1755,6 +1890,776 @@ body.dark .maps-btn {
 
 
 /* =====================================================
+   FAQ PAGE
+===================================================== */
+
+.faq-page {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   FAQ HERO
+===================================================== */
+
+.faq-hero {
+
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        150px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 107, 24, 0.13),
+            transparent 45%
+        ),
+        var(--bg);
+}
+
+
+/*
+   IMPORTANT:
+   تم حذف الدائرتين الزخرفيتين
+   faq-hero::before
+   faq-hero::after
+*/
+
+.faq-hero::before,
+.faq-hero::after {
+    display: none !important;
+    content: none !important;
+}
+
+
+.faq-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+}
+
+.faq-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color:
+        var(--orange);
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    border-radius: 0 !important;
+
+    padding: 0 !important;
+}
+
+.faq-hero h1 {
+
+    margin:
+        0 0 18px;
+
+    font-size:
+        clamp(42px, 7vw, 76px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    color:
+        var(--text);
+}
+
+.faq-hero p {
+
+    margin:
+        0 auto;
+
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color:
+        var(--muted);
+}
+
+
+/* =====================================================
+   FAQ SECTION
+===================================================== */
+
+.faq-section {
+
+    padding:
+        30px 20px 100px;
+
+    background:
+        var(--bg);
+}
+
+.faq-container {
+
+    width:
+        min(100%, 950px);
+
+    margin:
+        0 auto;
+}
+
+.faq-heading {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.faq-heading > span {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--orange);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.faq-heading h2 {
+
+    margin:
+        0 0 12px;
+
+    font-size:
+        clamp(28px, 5vw, 42px);
+
+    font-weight: 900;
+
+    color:
+        var(--text);
+}
+
+.faq-heading p {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--muted);
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   FAQ LIST
+===================================================== */
+
+.faq-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.faq-item {
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        var(--surface);
+
+    overflow: hidden;
+
+    transition:
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.faq-item:hover {
+
+    border-color:
+        rgba(255, 107, 24, .35);
+
+    transform:
+        translateY(-2px);
+}
+
+.faq-item.open {
+
+    border-color:
+        rgba(255, 107, 24, .55);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, .07);
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.faq-question {
+
+    width: 100%;
+
+    min-height: 75px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color:
+        var(--text);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        20px 24px;
+
+    text-align: inherit;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.faq-question > span:first-child {
+
+    flex: 1;
+}
+
+
+/* =====================================================
+   FAQ ICON
+===================================================== */
+
+.faq-icon {
+
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    color:
+        var(--orange);
+
+    transition:
+        color .3s ease;
+}
+
+.faq-icon i {
+
+    font-size: 14px;
+
+    transition:
+        transform .35s ease;
+}
+
+
+/*
+   السهم يلف لفوق عند فتح السؤال
+*/
+
+.faq-item.open .faq-icon {
+
+    background: transparent !important;
+
+    color:
+        var(--orange);
+}
+
+.faq-item.open .faq-icon i {
+
+    transform:
+        rotate(180deg);
+}
+
+
+/* =====================================================
+   ANSWER
+===================================================== */
+
+.faq-answer {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height .4s ease,
+        opacity .3s ease;
+}
+
+.faq-item.open .faq-answer {
+
+    opacity: 1;
+}
+
+.faq-answer p {
+
+    margin: 0;
+
+    padding:
+        0 24px 24px;
+
+    color:
+        var(--muted);
+
+    font-size: 16px;
+
+    line-height: 2;
+}
+
+
+/* =====================================================
+   FAQ CTA
+===================================================== */
+
+.faq-cta-section {
+
+    padding:
+        0 20px 100px;
+
+    background:
+        var(--bg);
+}
+
+.faq-cta {
+
+    position: relative;
+
+    width:
+        min(100%, 1050px);
+
+    margin:
+        0 auto;
+
+    padding: 45px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 107, 24, .18),
+            transparent 35%
+        ),
+        var(--surface);
+
+    border:
+        1px solid
+        rgba(255, 107, 24, .25);
+}
+
+.faq-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border:
+        1px solid
+        rgba(255, 107, 24, .15);
+
+    border-radius: 50%;
+
+    left: -70px;
+    bottom: -90px;
+}
+
+.faq-cta-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.faq-cta-content > span {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--orange);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.faq-cta-content h2 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        var(--text);
+
+    font-size:
+        clamp(26px, 4vw, 38px);
+
+    font-weight: 900;
+}
+
+.faq-cta-content p {
+
+    margin: 0;
+
+    color:
+        var(--muted);
+
+    line-height: 1.8;
+}
+
+.faq-cta-buttons {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.faq-btn {
+
+    min-width: 145px;
+
+    padding:
+        14px 22px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.faq-btn:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+.faq-btn.primary {
+
+    background:
+        var(--orange);
+
+    color: #fff;
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 107, 24, .22);
+}
+
+.faq-btn.primary:hover {
+
+    box-shadow:
+        0 14px 30px
+        rgba(255, 107, 24, .3);
+}
+
+.faq-btn.secondary {
+
+    background: transparent;
+
+    color:
+        var(--text);
+
+    border:
+        1px solid var(--border);
+}
+
+.faq-btn.secondary:hover {
+
+    border-color:
+        var(--orange);
+
+    color:
+        var(--orange);
+}
+
+
+/* =====================================================
+   DARK FAQ
+===================================================== */
+
+body.dark .faq-item {
+
+    background:
+        rgba(255, 255, 255, .025);
+}
+
+body.dark .faq-item.open {
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, .25);
+}
+
+body.dark .faq-cta {
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 107, 24, .13),
+            transparent 35%
+        ),
+        rgba(255, 255, 255, .025);
+}
+
+
+/* =====================================================
+   FAQ MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .faq-hero {
+
+        min-height: 390px;
+
+        padding:
+            130px 18px 70px;
+    }
+
+    .faq-hero h1 {
+
+        font-size: 45px;
+    }
+
+    .faq-hero p {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .faq-section {
+
+        padding:
+            20px 15px 70px;
+    }
+
+    .faq-heading {
+
+        margin-bottom: 30px;
+    }
+
+    .faq-heading h2 {
+
+        font-size: 29px;
+    }
+
+    .faq-heading p {
+
+        font-size: 14px;
+    }
+
+    .faq-question {
+
+        min-height: 68px;
+
+        padding:
+            17px 16px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .faq-icon {
+
+        width: 30px;
+        height: 30px;
+
+        min-width: 30px;
+    }
+
+    .faq-answer p {
+
+        padding:
+            0 16px 20px;
+
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+    .faq-cta-section {
+
+        padding:
+            0 15px 70px;
+    }
+
+    .faq-cta {
+
+        padding:
+            30px 22px;
+
+        border-radius: 22px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: center;
+    }
+
+    .faq-cta-buttons {
+
+        justify-content: center;
+    }
+
+    .faq-btn {
+
+        flex: 1;
+
+        min-width: 130px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 430px) {
+
+    .faq-hero h1 {
+
+        font-size: 39px;
+    }
+
+    .faq-eyebrow {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .faq-question {
+
+        gap: 12px;
+    }
+
+    .faq-question > span:first-child {
+
+        font-size: 14px;
+    }
+
+    .faq-cta-buttons {
+
+        flex-direction: column;
+    }
+
+    .faq-btn {
+
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
    REDUCED MOTION
 ===================================================== */
 
@@ -1763,6 +2668,7 @@ body.dark .maps-btn {
     *,
     *::before,
     *::after {
+
         animation-duration:
             .01ms !important;
 
@@ -1775,4 +2681,5 @@ body.dark .maps-btn {
         transition-duration:
             .01ms !important;
     }
+
 }

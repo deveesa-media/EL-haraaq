@@ -43,6 +43,7 @@ function applyTheme() {
     const isDark =
         savedTheme === "dark";
 
+
     document.body.classList.toggle(
         "dark",
         isDark
@@ -146,6 +147,24 @@ function updateLanguage() {
                 : "AR";
 
     }
+
+
+    /* Update open FAQ height */
+
+    setTimeout(() => {
+
+        document
+            .querySelectorAll(
+                ".faq-item.open .faq-answer"
+            )
+            .forEach(answer => {
+
+                answer.style.maxHeight =
+                    answer.scrollHeight + "px";
+
+            });
+
+    }, 50);
 
 }
 
@@ -441,7 +460,8 @@ const navLinks =
 
 
 if (
-    "IntersectionObserver" in window
+    "IntersectionObserver" in window &&
+    sections.length
 ) {
 
     const sectionObserver =
@@ -461,16 +481,20 @@ if (
                         navLinks.forEach(
                             link => {
 
-                                const isActive =
+                                const href =
                                     link.getAttribute(
                                         "href"
-                                    ) ===
+                                    );
+
+
+                                const isInternalSection =
+                                    href ===
                                     `#${entry.target.id}`;
 
 
                                 link.classList.toggle(
                                     "active",
-                                    isActive
+                                    isInternalSection
                                 );
 
                             }
@@ -543,6 +567,180 @@ window.addEventListener(
 
 
 /* =====================================================
+   FAQ ACCORDION
+===================================================== */
+
+const faqQuestions =
+    document.querySelectorAll(
+        ".faq-question"
+    );
+
+
+faqQuestions.forEach(
+    question => {
+
+        question.addEventListener(
+            "click",
+            () => {
+
+                const currentItem =
+                    question.closest(
+                        ".faq-item"
+                    );
+
+
+                if (!currentItem) {
+                    return;
+                }
+
+
+                const currentAnswer =
+                    currentItem.querySelector(
+                        ".faq-answer"
+                    );
+
+
+                if (!currentAnswer) {
+                    return;
+                }
+
+
+                const isOpen =
+                    currentItem.classList.contains(
+                        "open"
+                    );
+
+
+                /*
+                    Close all other questions
+                */
+
+                document
+                    .querySelectorAll(
+                        ".faq-item.open"
+                    )
+                    .forEach(
+                        item => {
+
+                            if (
+                                item ===
+                                currentItem
+                            ) {
+                                return;
+                            }
+
+
+                            item.classList.remove(
+                                "open"
+                            );
+
+
+                            const otherQuestion =
+                                item.querySelector(
+                                    ".faq-question"
+                                );
+
+
+                            const otherAnswer =
+                                item.querySelector(
+                                    ".faq-answer"
+                                );
+
+
+                            if (otherQuestion) {
+
+                                otherQuestion.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            }
+
+
+                            if (otherAnswer) {
+
+                                otherAnswer.style.maxHeight =
+                                    null;
+
+                            }
+
+                        }
+                    );
+
+
+                /*
+                    Toggle current question
+                */
+
+                if (isOpen) {
+
+                    currentItem.classList.remove(
+                        "open"
+                    );
+
+
+                    question.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    currentAnswer.style.maxHeight =
+                        null;
+
+                } else {
+
+                    currentItem.classList.add(
+                        "open"
+                    );
+
+
+                    question.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+
+                    currentAnswer.style.maxHeight =
+                        currentAnswer.scrollHeight +
+                        "px";
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   FAQ HEIGHT AFTER LANGUAGE CHANGE
+===================================================== */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        document
+            .querySelectorAll(
+                ".faq-item.open .faq-answer"
+            )
+            .forEach(
+                answer => {
+
+                    answer.style.maxHeight =
+                        answer.scrollHeight +
+                        "px";
+
+                }
+            );
+
+    }
+);
+
+
+/* =====================================================
    INITIAL LOAD
 ===================================================== */
 
@@ -559,13 +757,64 @@ window.addEventListener(
             .querySelectorAll(
                 ".hero .reveal"
             )
-            .forEach(element => {
+            .forEach(
+                element => {
 
-                element.classList.add(
-                    "show"
-                );
+                    element.classList.add(
+                        "show"
+                    );
 
-            });
+                }
+            );
+
+
+        /*
+            Make sure FAQ starts closed
+        */
+
+        document
+            .querySelectorAll(
+                ".faq-item"
+            )
+            .forEach(
+                item => {
+
+                    item.classList.remove(
+                        "open"
+                    );
+
+
+                    const question =
+                        item.querySelector(
+                            ".faq-question"
+                        );
+
+
+                    const answer =
+                        item.querySelector(
+                            ".faq-answer"
+                        );
+
+
+                    if (question) {
+
+                        question.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+
+                    if (answer) {
+
+                        answer.style.maxHeight =
+                            null;
+
+                    }
+
+                }
+            );
 
     }
 );
